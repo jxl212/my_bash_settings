@@ -2,6 +2,9 @@
 HISTFILESIZE=-1
 HISTSIZE=-1
 
+# Do not store a duplicate of the last entered command
+HISTCONTROL=ignoredups
+
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$"\n"}history -a; history -c; history -r"
 
