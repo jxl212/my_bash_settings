@@ -1,9 +1,9 @@
 # Set no limit for history file size
-HISTFILESIZE=-1
-HISTSIZE=-1
-
+export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 # Do not store a duplicate of the last entered command
-HISTCONTROL=ignoredups
+export HISTCONTROL=ignoreboth
+# ignore clear, ls, exit
+export HISTIGNORE='&:clear:ls:exit:[ t\]*'
 
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$"\n"}history -a; history -c; history -r"
