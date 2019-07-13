@@ -26,7 +26,7 @@ for f in other_rc/my.*; do
   diff $f $out_f 2>/dev/null
   if [ $? -ne 0 ]; then
     echo "updating $out_f... "
-    cat $f  >$out_f
+    cp -v $f $out_f
   fi
 done
 
