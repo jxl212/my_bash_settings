@@ -21,8 +21,8 @@ chmod +x ~/.bashrc.d/*.bash
 
 #for all my.xxx files copy into .bashrc.d directory if they differ
 for f in other_rc/my.*; do
-  f=$(basename "$f")
-  out_f=~/.${f#*.}
+  my_rc=$(basename "$f")
+  out_f=~/.${my_rc#*.}
   diff $f $out_f 2>/dev/null
   if [ $? -ne 0 ]; then
     echo "updating $out_f... "
